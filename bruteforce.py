@@ -2,7 +2,7 @@ import csv
 from itertools import combinations
 import time
 
-DATA_PATH = 'docs/dataset1_Python+P7.csv'
+DATA_PATH = 'docs/bf-datas.csv'
 CLIENT_WALLET = 500
 
 
@@ -37,7 +37,7 @@ def read_csv(file: str) -> list:
 
 
 def gain_compute(action: dict):
-    action['gain'] = float(action['price']) * float(action['profit'])
+    action['gain'] = float(action['price']) * float(action['profit']) / 100 + float(action['price'])
     action['balance'] = float(action['gain']) - float(action['price'])
 
 
